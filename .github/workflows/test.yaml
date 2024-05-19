@@ -12,7 +12,11 @@ jobs:
         name: Checkout repository
 
       - name: Lint yaml file
+        id: changed-files
         run: |
-           git diff --name-only -r HEAD^1 HEAD | grep '\.yml$\|\.yaml$' | xargs yamllint
+           echo "changed_files$(git diff --name-only -r HEAD^1 HEAD | xargs)"
+      - name: Print changed file
+        run: echo "${{steps.changed-files.outputs.changed_files}}"
+           #grep '\.yml$\|\.yaml$' | xargs yamllint
 
 
