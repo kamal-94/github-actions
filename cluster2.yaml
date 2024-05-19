@@ -1,0 +1,5 @@
+kind: cluster2
+name: test-cluster2
+nodes: 3
+type: kubernetes
+age: 30
