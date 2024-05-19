@@ -22,6 +22,6 @@ jobs:
       - name: Linting yaml file
         if: steps.changed-files.outputs.changed_files !=''
         run: |
-          echo "${{steps.changed-files.outputs.changed_files}}" | yamllint
+          echo "${{steps.changed-files.outputs.changed_files}}" | xargs -I {} yamllint {}
 
 
