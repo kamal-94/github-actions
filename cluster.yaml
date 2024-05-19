@@ -1,4 +1,4 @@
-kind: Cluster
+kind: cluster
 name: test-cluster1
 nodes: 2
 type: kubernetes
