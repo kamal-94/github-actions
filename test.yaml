@@ -1,0 +1,4 @@
+kind: Cluster
+name: test-cluster
+nodes: 3
+type: kubernetes
