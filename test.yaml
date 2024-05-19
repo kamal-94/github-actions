@@ -1,0 +1,3 @@
+kind: Cluster
+name: test-cluster
+nodes: 3
