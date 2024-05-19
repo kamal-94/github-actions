@@ -16,7 +16,7 @@ jobs:
       - name: Lint yaml file
         id: changed-files
         run: |
-           echo "changed_files=$(git diff --name-only -r HEAD^1 HEAD | xargs)"
+           echo "changed_files=$(git diff --name-only -r HEAD^1 HEAD | xargs)" >> $GITHUB_OUTPUT
       - name: Print changed file
         run: echo "${{steps.changed-files.outputs.changed_files}}"
            #grep '\.yml$\|\.yaml$' | xargs yamllint
