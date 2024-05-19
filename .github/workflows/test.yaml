@@ -1,0 +1,16 @@
+name: Validate changed yaml file
+
+on:
+  pull_request:
+     branches: [main]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        name: Checkout repository
+
+      - name: Lint yaml file
+        run: |
+           git diff --name-only -r HEAD^1 HEAD | xargs yamllint
